@@ -1,12 +1,14 @@
 import time
+import asyncio
 from parser import parse_articles
 from datahubs import initialize_hubs
 
-def main():
+
+async def main_loop():
     initialize_hubs()
     while True:
-        parse_articles()
-        time.sleep(600)
+        await parse_articles()
+        await asyncio.sleep(600)
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main_loop())
