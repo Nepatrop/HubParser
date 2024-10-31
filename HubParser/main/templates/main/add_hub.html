@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить хаб</title>
+</head>
+<body>
+    <h1>Добавить хаб</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Добавить</button>
+    </form>
+    <a href="{% url 'index' %}">Вернуться к списку хабов</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HubParser</title>
+</head>
+<body>
+    <h1>HubParser</h1>
+    <ul>
+        {% for hub in hubs %}
+            <li>
+                {{ hub.url }} - {{ hub.period }}
+                <a href="{% url 'edit_hub' hub.id %}">Изменить</a>
+                <a href="{% url 'delete_hub' hub.id %}">Удалить</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_hub' %}">Добавить хаб</a>
+</body>
+</html>
