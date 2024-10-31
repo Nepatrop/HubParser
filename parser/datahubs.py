@@ -3,7 +3,9 @@ import sqlite3
 
 def initialize_hubs():
     hubs = [
-        {"url": "https://habr.com/ru/feed/", "period": 600}
+        {"url": "https://habr.com/ru/feed/", "period": 600},
+        {"url": "https://habr.com/ru/hubs/python/articles/", "period": 300},
+        {"url": "https://habr.com/ru/hubs/cpp/articles/", "period": 60}
     ]
 
     conn = sqlite3.connect('../articles.db')

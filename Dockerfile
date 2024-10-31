@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["./start_server.sh"]
+CMD ["python", "HubParser/manage.py", "runserver", "0.0.0.0:8000"]
