@@ -6,7 +6,7 @@ def initialize_hubs():
         {"url": "https://habr.com/ru/feed/", "period": 600}
     ]
 
-    conn = sqlite3.connect('articles.db')
+    conn = sqlite3.connect('../articles.db')
     cursor = conn.cursor()
 
     cursor.execute('''

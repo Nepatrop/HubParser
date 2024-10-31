@@ -1,4 +1,4 @@
-requests
-beautifulsoup4
+Django
 aiohttp
+beautifulsoup4
 asyncio

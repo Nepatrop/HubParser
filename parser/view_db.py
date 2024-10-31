@@ -2,7 +2,7 @@ import sqlite3
 
 
 def view_database():
-    conn = sqlite3.connect('articles.db')
+    conn = sqlite3.connect('../articles.db')
     cursor = conn.cursor()
 
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")

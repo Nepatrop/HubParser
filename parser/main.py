@@ -8,7 +8,7 @@ from datahubs import initialize_hubs
 async def main_loop():
     initialize_hubs()
 
-    conn = sqlite3.connect('articles.db')
+    conn = sqlite3.connect('../articles.db')
     cursor = conn.cursor()
 
     cursor.execute("SELECT url, period FROM hubs")
@@ -24,10 +24,12 @@ async def main_loop():
 
     await asyncio.gather(*tasks)
 
-
 async def parse_hub(url, period):
     while True:
-        await parse_articles(url)
+        try:
+            await parse_articles(url)
+        except Exception as e:
+            print(f"Ошибка парсинга {url}: {e}")
         await asyncio.sleep(period)
 
 
